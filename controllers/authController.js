@@ -1,11 +1,9 @@
-
 const { promisify } = require("util");
 const catchAsync = require("./../utils/catchAsync");
 const AppError = require("./../utils/appError");
 
 const User = require("./../models/userModel");
 const jwt = require("jsonwebtoken");
-
 
 signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -23,7 +21,6 @@ createSendToken = (user, statusCode, req, res) => {
     httpOnly: true,
     secure: req.secure || req.headers["x-forwarded-proto"] === "https",
   });
-
 
   res.status(statusCode).json({
     status: "Success",
@@ -59,7 +56,6 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
     role: req.body.role,
   }).catch((err) => {
-    // console.log(err, "This is from the error");
     res.status(500).json({
       error: err.message,
     });
@@ -77,7 +73,6 @@ exports.signout = (req, res) => {
 };
 
 exports.protected = catchAsync(async (req, res, next) => {
-
   let token;
 
   if (

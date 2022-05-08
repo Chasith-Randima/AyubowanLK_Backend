@@ -29,5 +29,3 @@ router.patch(
 
 router.get("/userPhoto", userController.userPhoto);
 module.exports = router;
-
-// router.route('/').get(userController.allUsers).post(userController.createUser);
