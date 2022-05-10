@@ -73,7 +73,7 @@ exports.signout = (req, res) => {
   });
 };
 
-// route protect function
+// route protect
 exports.protected = catchAsync(async (req, res, next) => {
   let token;
 
