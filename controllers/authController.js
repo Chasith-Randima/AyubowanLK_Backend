@@ -160,7 +160,7 @@ exports.restrictTo = (...roles) => {
   };
 };
 
-// update password function
+// update password
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   console.log(req.body, "from update password");
