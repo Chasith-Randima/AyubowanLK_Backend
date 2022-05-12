@@ -3,7 +3,7 @@ const router = express.Router();
 
 const categoryController = require("./../controllers/categoryController");
 
-// category routes
+// category route
 
 router
   .route("/")
