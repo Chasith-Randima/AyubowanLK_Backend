@@ -203,6 +203,7 @@ exports.allArticles = catchAsync(async (req, res, next) => {
 });
 exports.allArticlesWithTagsAndCategories = catchAsync(
   async (req, res, next) => {
+    let count = await Article.count();
     const limit = req.query.limit ? req.query.limit : 9;
     const skip = req.query.skip ? req.query.skip : 0;
     // const limit = req.body.limit ? parseInt(req.body.limit) : 10;
@@ -230,7 +231,6 @@ exports.allArticlesWithTagsAndCategories = catchAsync(
     //   return next(new AppError("There are no tags...", 404));
     // }
 
-    let count = await Article.count();
     // console.log(count);
 
     res.status(200).json({
@@ -332,6 +332,8 @@ exports.manageArticleList = async (req, res) => {
 exports.getArticlesByCategories = async (req, res) => {
   // console.log(req.params, req.query);
 
+  let count = await Article.count({ categories: cat });
+
   let skip =
     !req.query.skip || req.query.skip == "undefined" ? 0 : req.query.skip;
   let limit =
@@ -368,7 +370,6 @@ exports.getArticlesByCategories = async (req, res) => {
 
   // const tags = await Tag.find({})
 
-  let count = await Article.count({ categories: cat });
   // console.log(count);
 
   return res.status(200).json({
@@ -382,6 +383,7 @@ exports.getArticlesByCategories = async (req, res) => {
 exports.getArticlesByTags = async (req, res) => {
   // console.log(req.params);
 
+  let count = await Article.count({ tags: tag });
   let skip =
     !req.query.skip || req.query.skip == "undefined" ? 0 : req.query.skip;
   let limit =
@@ -407,8 +409,6 @@ exports.getArticlesByTags = async (req, res) => {
     .select(
       "_id title slug excerpt categories postedBy tags createdAt updatedAt"
     );
-
-  let count = await Article.count({ tags: tag });
 
   if (!doc) {
     return res.status(404).json({
