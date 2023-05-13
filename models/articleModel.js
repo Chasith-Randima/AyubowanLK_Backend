@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { default: slugify } = require("slugify");
 
+// article model
 const articleSchema = new mongoose.Schema(
   {
     title: {

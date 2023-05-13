@@ -5,6 +5,8 @@ const express = require("express");
 
 const router = express.Router();
 
+// articles routes
+
 router.use(authController.isLoggedIn);
 router
   .route("/fullArticles")
