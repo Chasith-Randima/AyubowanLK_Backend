@@ -5,7 +5,7 @@ const express = require("express");
 
 const router = express.Router();
 
-// articles routes
+// articles route
 
 router.use(authController.isLoggedIn);
 router
