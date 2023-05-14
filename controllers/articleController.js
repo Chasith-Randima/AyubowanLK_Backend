@@ -432,8 +432,6 @@ exports.getArticlesByTags = async (req, res) => {
 };
 
 exports.listSearch = async (req, res) => {
-  // console.log("listSearch from backend is working...");
-
   const search = req.query.search;
   let doc;
 
