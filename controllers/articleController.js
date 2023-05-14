@@ -91,7 +91,7 @@ exports.createArticle = catchAsync(async (req, res, next) => {
         new AppError("There was an error saving the article...", 400)
       );
       // return res.status(400).json({
-      //   message: "error",
+      //   message: "error"
       // });
     }
 
