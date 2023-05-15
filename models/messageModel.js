@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-// message schemas
+// message schema
 
 const messageSchema = new mongoose.Schema(
   {
