@@ -2,7 +2,7 @@ const catchAsync = require("./../utils/catchAsync");
 const AppError = require("./../utils/appError");
 const slugify = require("slugify");
 
-
+// template crud functions
 exports.getOneDoc = (Model) =>
   catchAsync(async (req, res, next) => {
     console.log(req.params);
