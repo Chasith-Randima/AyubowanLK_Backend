@@ -2,6 +2,8 @@ const Category = require("./../models/categoryModel");
 const factory = require("./handlerFactory");
 const Article = require("../models/articleModel");
 
+// category functions
+
 exports.getOneCategory = factory.getOneDoc(Category);
 exports.getAllCategories = factory.getAll(Category);
 exports.createOneCategory = factory.createOne(Category);
