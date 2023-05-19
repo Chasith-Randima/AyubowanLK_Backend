@@ -3,6 +3,8 @@ const router = express.Router();
 
 const tagController = require("./../controllers/tagController");
 
+// tag routes
+
 router.route("/").get(tagController.geAllTags).post(tagController.createOneTag);
 router
   .route("/:slug")
