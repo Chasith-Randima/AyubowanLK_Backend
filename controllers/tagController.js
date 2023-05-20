@@ -1,6 +1,8 @@
 const factory = require("./handlerFactory");
 const Tag = require("../models/tagModel");
 
+// tag functions
+
 exports.getOneTag = factory.getOneDoc(Tag);
 exports.geAllTags = factory.getAll(Tag);
 exports.createOneTag = factory.createOne(Tag);
