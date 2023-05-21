@@ -1,3 +1,4 @@
+// sort , filter ,pagination
 class APIFeatures {
   constructor(query, queryString) {
     this.query = query;
